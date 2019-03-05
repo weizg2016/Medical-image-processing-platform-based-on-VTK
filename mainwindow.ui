@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>967</width>
+    <height>813</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>12</y>
+      <width>911</width>
+      <height>721</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,10">
+     <item>
+      <widget class="QTextBrowser" name="text_inf"/>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="1">
+        <widget class="QVTKOpenGLWidget" name="qvtkWidgetDRight" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QVTKOpenGLWidget" name="qvtkWidgetDLeft" native="true"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QVTKOpenGLWidget" name="qvtkWidgetLeft" native="true"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QVTKOpenGLWidget" name="qvtkWidgetRight" native="true"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>967</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="file">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_input"/>
+    <addaction name="action_exportInf"/>
+    <addaction name="action_anatomyView"/>
+    <addaction name="action_exportSTL"/>
+    <addaction name="action_close"/>
+   </widget>
+   <widget class="QMenu" name="visualization">
+    <property name="title">
+     <string>三维可视化</string>
+    </property>
+    <widget class="QMenu" name="surface">
+     <property name="title">
+      <string>面绘制</string>
+     </property>
+     <addaction name="MarchingCubes"/>
+     <addaction name="DividingCubes"/>
+    </widget>
+    <widget class="QMenu" name="volume">
+     <property name="title">
+      <string>体绘制</string>
+     </property>
+     <addaction name="RayCasting"/>
+     <addaction name="TextureMapping"/>
+     <addaction name="MaximumIntensity"/>
+    </widget>
+    <addaction name="surface"/>
+    <addaction name="volume"/>
+   </widget>
+   <widget class="QMenu" name="model_editor">
+    <property name="title">
+     <string>模型编辑</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="segmentation">
+    <property name="title">
+     <string>图像分割</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="about">
+    <property name="title">
+     <string>关于</string>
+    </property>
+   </widget>
+   <addaction name="file"/>
+   <addaction name="visualization"/>
+   <addaction name="model_editor"/>
+   <addaction name="segmentation"/>
+   <addaction name="about"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_close">
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="DividingCubes">
+   <property name="text">
+    <string>剖分立方体算法</string>
+   </property>
+  </action>
+  <action name="RayCasting">
+   <property name="text">
+    <string>光线投射算法</string>
+   </property>
+  </action>
+  <action name="TextureMapping">
+   <property name="text">
+    <string>3D纹理映射算法</string>
+   </property>
+  </action>
+  <action name="MaximumIntensity">
+   <property name="text">
+    <string>最大密度投影算法</string>
+   </property>
+  </action>
+  <action name="action_exportInf">
+   <property name="text">
+    <string>文件信息</string>
+   </property>
+  </action>
+  <action name="action_anatomyView">
+   <property name="text">
+    <string>切片视图</string>
+   </property>
+  </action>
+  <action name="action_input">
+   <property name="text">
+    <string>导入DICOM</string>
+   </property>
+  </action>
+  <action name="MarchingCubes">
+   <property name="text">
+    <string>移动立方体算法</string>
+   </property>
+  </action>
+  <action name="action_exportSTL">
+   <property name="text">
+    <string>导出STL</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKOpenGLWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
